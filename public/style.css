@@ -1,0 +1,131 @@
+@font-face {
+    font-family: Zyzol;
+    src: url('Zyzol.otf');
+}
+
+:root {
+    --color-text: #000000;
+    --color-background: #d9fcff;
+    --color-frame: #f5feff;
+    --color-border: #09cdda;
+    --color-tagline: #09cdda;
+    --color-extra: #555555;
+
+    --font-header: Zyzol, Roboto, Arial, sans;
+    --font-sans: Roboto, Arial, sans;
+    --font-serif: serif;
+}
+
+body {
+    margin: 0 !important;
+    height: 90vh;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    font-family: var(--font-sans);
+    
+    font-size: 1.5em;
+    
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-header);
+}
+
+main {
+    padding: 1em;
+    border: 2px solid var(--color-border);
+    border-radius: 2em;
+    background-color: var(--color-frame);
+    min-height: max-content;
+}
+
+header > * {
+    display: flex;
+    justify-content: center;
+}
+
+header > h1 {
+    margin-bottom: 0;
+}
+
+.tagline {
+    color: var(--color-tagline);
+    margin-top: 0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.ingredients {
+    margin: 1em auto 1.5em;
+    max-width: max-content;
+
+    display: grid;
+    
+    grid-template-columns: auto 1fr 1fr;
+}
+
+.ingredients > * {
+    display: inline;
+    padding: 0.25em;
+    align-self: center;
+}
+
+.ingredients > input {
+    border-radius: 0.5em;
+    border: none;
+    background-color: transparent;
+    text-align: right;
+    width: 3em;
+
+    font-family: var(--font-sans);
+    font-size: 1em;
+    
+    margin-bottom: 1em;
+}
+
+.ingredients > .unit {
+    margin-bottom: 1em;
+}
+
+.extra {
+    font-family: var(--font-serif);
+    font-size: 0.7em;
+    color: var(--color-extra);
+    font-style: italic;
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        background-color: var(--color-frame);
+    }
+    
+    main {
+        border: none;
+        border-radius: 0;
+    }
+    
+    .ingredients {
+        grid-template-columns: min-content 1fr;
+    }
+
+    .ingredients .ingredient {
+        grid-column-start: span 2;
+        margin-bottom: -0.25em;
+    }
+}
+
+@media screen and (min-width: 401px) {
+    body {
+        align-items: center;
+    }
+    
+    .ingredients .ingredient {
+        margin-bottom: 1em;
+    }
+}
