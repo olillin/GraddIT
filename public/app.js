@@ -7,8 +7,8 @@ const gron = document.getElementById('gron')
 
 const ratios = {
     gradde: 1,
-    bla: 1,
-    gron: 0.5,
+    bla: 5,
+    gron: 2.5,
 }
 
 gradde?.addEventListener('change', e => {
